@@ -2,9 +2,11 @@ PY=python
 PELICAN=pelican
 PELICANOPTS=
 
+#BLOGDIR=essessv.github.io
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
+#OUTPUTDIR=../$(BLOGDIR)
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
