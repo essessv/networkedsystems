@@ -7,13 +7,24 @@
         <meta name="author" content="SS" />
         <meta name="copyright" content="SS" />
 
-        <title>Networked Systems - Authors</title>
+        <title>Search · Networked Systems
+</title>
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="http://networkedsystems.in/theme/css/pygments.css" media="screen">
         <link rel="stylesheet" type="text/css" href="http://networkedsystems.in/theme/tipuesearch/tipuesearch.css" media="screen">
         <link rel="stylesheet" type="text/css" href="http://networkedsystems.in/theme/css/elegant.css" media="screen">
         <link rel="stylesheet" type="text/css" href="http://networkedsystems.in/theme/css/custom.css" media="screen">
+        <link rel="shortcut icon" href="http://networkedsystems.in/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://networkedsystems.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://networkedsystems.in/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://networkedsystems.in/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://networkedsystems.in/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://networkedsystems.in/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://networkedsystems.in/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://networkedsystems.in/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://networkedsystems.in/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://networkedsystems.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
         <link href="http://networkedsystems.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Networked Systems - Full Atom Feed" />
     </head>
     <body>
@@ -44,7 +55,12 @@
             <div class="row-fluid">
                 <div class="span1"></div>
                 <div class="span10">
-    <h1>Authors on Networked Systems</h1>                </div>
+<article>
+    <div class="span8 offset2">
+        <div id="tipue_search_content"><div id="tipue_search_loading"></div></div>
+    </div>
+</article>
+                </div>
                 <div class="span1"></div>
             </div>
         </div>
@@ -56,14 +72,19 @@
         <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a> by <a href="http://oncrashreboot.com" title="Talha Mansoor Home Page">Talha Mansoor</a></li>
     </ul>
 </div>
-</footer>        <script src="http://code.jquery.com/jquery.min.js"></script>
-        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
-        <script>
-            function validateForm(query)
-            {
-                return (query.length > 0);
-            }
-        </script>
+</footer><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="http://networkedsystems.in/theme/tipuesearch/tipuesearch_set.js"></script>
+<script type="text/javascript" src="http://networkedsystems.in/theme/tipuesearch/tipuesearch.min.js"></script>
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+             'mode' : 'json',
+         'show': 10,
+         'newWindow': false,
+             'contentLocation': 'tipuesearch_content.json'
+     });
+});
+</script>
     </body>
     <!-- Theme: Elegant built for Pelican
     License : http://oncrashreboot.com/pelican-elegant -->
