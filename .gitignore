@@ -1,0 +1,5 @@
+pelican.pid
+srv.pid
+publishconf.py
+output/
+*.pyc
