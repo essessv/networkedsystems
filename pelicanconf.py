@@ -13,9 +13,25 @@ DEFAULT_LANG = u'en'
 USE_FOLDER_AS_CATEGORY = True
 
 # Plugins
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid',
+                'toc(permalink=true)']
 PLUGIN_PATH = '../pelican-plugins'
-PLUGINS = ['tipue_search']
-
+PLUGINS = ['sitemap', 'extract_toc', 'tipue_search', 'liquid_tags.img',
+           'neighbors', 'latex', 'related_posts', 'share_post',
+           'multi_part']
+SITEMAP = {
+    'format': 'xml',
+    'priorities': {
+        'articles': 0.5,
+        'indexes': 0.5,
+        'pages': 0.5
+    },
+    'changefreqs': {
+        'articles': 'monthly',
+        'indexes': 'daily',
+        'pages': 'monthly'
+    }
+}
 
 # Theme
 THEME = '../my_theme/pelican-elegant'
@@ -23,6 +39,20 @@ THEME = '../my_theme/pelican-elegant'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+
+# Elegant theme
+STATIC_PATHS = ['theme/images', 'images']
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search', '404'))
+TAG_SAVE_AS = ''
+AUTHOR_SAVE_AS = ''
+CATEGORY_SAVE_AS = ''
+USE_SHORTCUT_ICONS = True
+
+# Elegant Labels
+SOCIAL_PROFILE_LABEL = u'Stay in Touch'
+RELATED_POSTS_LABEL = 'Keep Reading'
+SHARE_POST_INTRO = 'Like this post? Share on:'
+COMMENTS_INTRO = u'So what do you think? Please leave your comments below.'
 
 # Blogroll
 LINKS =  (('All Things Distributed', 'http://www.allthingsdistributed.com'),
