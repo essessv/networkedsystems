@@ -86,7 +86,8 @@ LINKS =  (('All Things Distributed', 'http://www.allthingsdistributed.com'),
 
 # Social widget
 SOCIAL = (('GitHub', 'https://github.com/essessv'),
-          ('Email', 'mailto:essessv@gmail.com'),)
+          ('Email', 'mailto:essessv@gmail.com'),
+          ('RSS', 'http://networkedsystems.in/feeds/all.atom.xml'),)
 
 # Mailchimp
 EMAIL_SUBSCRIPTION_LABEL = u'Get Monthly Updates'
