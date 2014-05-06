@@ -2,23 +2,34 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+# Site Basic Settings
 AUTHOR = u'SS'
-SITENAME = u'Networked Systems'
 SITEURL = 'http://localhost:8000'
+SITENAME = u"""<span style="color:#AA1032;">Networked Systems</span>"""
 
-TIMEZONE = 'Europe/Paris'
-
+DATE_FORMATS = {'en': '%a, %d %b %Y'}
+LOCALE = ('en_US')
 DEFAULT_LANG = u'en'
+TIMEZONE = "US/Pacific"
 
 USE_FOLDER_AS_CATEGORY = True
 
+# Theme
+THEME = '../my_theme/pelican-elegant'
+DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search', '404'))
+TYPOGRIFY = True
+DEFAULT_PAGINATION = 10
 # Plugins
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid',
-                'toc(permalink=true)']
+MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(permalink=true)']
+
+
 PLUGIN_PATH = '../pelican-plugins'
-PLUGINS = ['sitemap', 'extract_toc', 'tipue_search', 'liquid_tags.img',
-           'neighbors', 'latex', 'related_posts', 'share_post',
-           'multi_part']
+PLUGINS = ['code_include', 'summary', 'clean_summary']
+PLUGINS.extend(['tipue_search', 'neighbors', 'related_posts'])
+PLUGINS.extend(['share_post', 'multipart', 'extract_toc'])
+PLUGINS.extend(['sitemap', 'assets', 'feed_summary'])
+PLUGINS.extend(['pelican_youtube', 'simple_footnotes'])
+
 SITEMAP = {
     'format': 'xml',
     'priorities': {
@@ -33,8 +44,13 @@ SITEMAP = {
     }
 }
 
-# Theme
-THEME = '../my_theme/pelican-elegant'
+# Summary plugin
+CLEAN_SUMMARY_MAXIMUM = 1
+CLEAN_SUMMARY_MINIMUM_ONE = True
+FEED_USE_SUMMARY = True
+RELATED_POSTS_MAX = 10
+
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
@@ -42,14 +58,16 @@ TRANSLATION_FEED_ATOM = None
 
 # Elegant theme
 STATIC_PATHS = ['theme/images', 'images']
-DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search', '404'))
 TAG_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 USE_SHORTCUT_ICONS = True
+ARTICLE_URL = u'{slug}'
+PAGE_URL = u'{slug}'
+PAGE_SAVE_AS = u'{slug}.html'
 
 # Elegant Labels
-SOCIAL_PROFILE_LABEL = u'Stay in Touch'
+SOCIAL_PROFILE_LABEL = u'Get in touch'
 RELATED_POSTS_LABEL = 'Keep Reading'
 SHARE_POST_INTRO = 'Like this post? Share on:'
 COMMENTS_INTRO = u'So what do you think? Please leave your comments below.'
@@ -67,9 +85,13 @@ LINKS =  (('All Things Distributed', 'http://www.allthingsdistributed.com'),
           ('Some really good blogs', 'http://highscalability.com/blog/category/blog'))
 
 # Social widget
-SOCIAL = (('GitHub', 'https://github.com/essessv'),)
+SOCIAL = (('GitHub', 'https://github.com/essessv'),
+          ('Email', 'mailto:essessv@gmail.com'),)
 
-DEFAULT_PAGINATION = 10
+# Mailchimp
+EMAIL_SUBSCRIPTION_LABEL = u'Get Monthly Updates'
+EMAIL_FIELD_PLACEHOLDER = u'Enter your email.'
+SUBSCRIBE_BUTTON_TITLE = u'Send me Free updates'
+MAILCHIMP_FORM_ACTION = u'empty'
 
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+

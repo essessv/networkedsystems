@@ -3,3 +3,5 @@ srv.pid
 publishconf.py
 output/
 *.pyc
+blog.sublime-project
+blog.sublime-workspace
