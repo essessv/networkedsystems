@@ -26,7 +26,7 @@ MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(pe
 PLUGIN_PATH = '../pelican-plugins'
 PLUGINS = ['code_include', 'summary', 'clean_summary']
 PLUGINS.extend(['tipue_search', 'neighbors', 'related_posts'])
-PLUGINS.extend(['share_post', 'multipart', 'extract_toc'])
+PLUGINS.extend(['share_post', 'multi_part', 'extract_toc'])
 PLUGINS.extend(['sitemap', 'assets', 'feed_summary'])
 PLUGINS.extend(['pelican_youtube', 'simple_footnotes'])
 
