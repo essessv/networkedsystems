@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 AUTHOR = u'SS'
 SITEURL = 'http://localhost:8000'
 SITENAME = u"""<span style="color:#AA1032;">Networked Systems</span>"""
-
+FEATURED_IMAGE = SITEURL + '/theme/images/apple-touch-icon-152x152.png'
 DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = ('en_US')
 DEFAULT_LANG = u'en'
