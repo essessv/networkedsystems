@@ -50,6 +50,9 @@ CLEAN_SUMMARY_MINIMUM_ONE = True
 FEED_USE_SUMMARY = True
 RELATED_POSTS_MAX = 10
 
+# Code
+PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
