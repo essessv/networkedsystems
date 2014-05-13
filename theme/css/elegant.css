@@ -17,7 +17,9 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;
+    /*font-family: Baskerville, Garamond, Georgia, 'DejaVu Serif', 'Times New Roman', Times, Serif;*/
+    font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+    /*font-family: Tahoma, Geneva, sans-serif;*/
     font-weight: normal;
 }
 h1 small, h1 a, h1 a:hover,
@@ -95,6 +97,7 @@ ul.footer-content li {
     padding-right: 10px;
 }
 /* Syntax Highlight */
+
 table {
     table-layout: fixed;
     width: 100%;
@@ -134,6 +137,7 @@ td.code {
 div.highlight {
     margin-bottom: 20px;
 }
+
 /* Tags */
 .list-of-tags {
     font-family: 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
@@ -183,7 +187,8 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     text-shadow: none;
 }
 .article-content, div.recent-posts p {
-    font: 1.2em/1.6em 'PT Serif', Georgia, 'Times New Roman', Times, Serif;
+    font: 1.2em/1.6em ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+    /*font: 1.2em/1.6em 'PT Serif', Georgia, 'Times New Roman', Times, Sans-Serif;*/
     text-align: justify;
 }
 .article-content {
