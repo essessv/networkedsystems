@@ -19,8 +19,9 @@ THEME = '../my_theme/pelican-elegant'
 DIRECT_TEMPLATES = (('index', 'tags', 'categories', 'archives', 'search', '404'))
 TYPOGRIFY = True
 DEFAULT_PAGINATION = 10
+RECENT_ARTICLES_COUNT = 10
 # Plugins
-MD_EXTENSIONS = ['codehilite(css_class=highlight)', 'extra', 'headerid', 'toc(permalink=true)']
+MD_EXTENSIONS = ['codehilite(linenums = True)', 'extra', 'headerid', 'toc(permalink=true)']
 
 
 PLUGIN_PATH = '../pelican-plugins'
@@ -51,7 +52,7 @@ FEED_USE_SUMMARY = True
 RELATED_POSTS_MAX = 10
 
 # Code
-PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
+#PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
 
 
 # Feed generation is usually not desired when developing
@@ -70,7 +71,7 @@ PAGE_URL = u'{slug}'
 PAGE_SAVE_AS = u'{slug}.html'
 
 # Elegant Labels
-SOCIAL_PROFILE_LABEL = u'Get in touch'
+SOCIAL_PROFILE_LABEL = u'Connect with SS:'
 RELATED_POSTS_LABEL = 'Keep Reading'
 SHARE_POST_INTRO = 'Like this post? Share on:'
 COMMENTS_INTRO = u'So what do you think? Please leave your comments below.'
