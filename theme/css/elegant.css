@@ -214,7 +214,7 @@ article div.article-content ul:not(.articles-timeline) a:hover {
     font: 18px FontAwesome;
     font-style: normal;
     font-weight: normal;
-    margin-left: 10em;
+    margin-left: -2em;
     text-decoration: inherit;
     position:absolute;
 }
