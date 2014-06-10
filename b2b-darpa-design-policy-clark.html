@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8"> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="S.S." />
+        <meta name="copyright" content="S.S." />
+
+
+<meta name="keywords" content="networking, back-to-basics, back-to-basics, " />
+
+<meta property="og:title" content="Back-to-Basics: The design philosophy of the DARPA Internet protocols "/>
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://networkedsystems.in/b2b-darpa-design-policy-clark" />
+<meta property="og:description" content="I’ve always been intrigued by the technologies that have had their start as research projects funded by DARPA. The Internet, in my opinion, is one project that has touched more lives than any other DARPA initiative. I first read this paper as part of my graduate course in computer networking, and it feels good to start right from the paper that got me interested in the area of networked systems. This paper is by David Clark and is one of the seminal papers in computer networking. It discussed about some of the core principles/motivations behind the design of the Internet protocols/architecture." />
+<meta property="og:site_name" content="Networked Systems" />
+<meta property="og:article:author" content="S.S." />
+<meta property="og:article:published_time" content="2014-06-01T00:00:00" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Back-to-Basics: The design philosophy of the DARPA Internet protocols ">
+<meta name="twitter:description" content="I’ve always been intrigued by the technologies that have had their start as research projects funded by DARPA. The Internet, in my opinion, is one project that has touched more lives than any other DARPA initiative. I first read this paper as part of my graduate course in computer networking, and it feels good to start right from the paper that got me interested in the area of networked systems. This paper is by David Clark and is one of the seminal papers in computer networking. It discussed about some of the core principles/motivations behind the design of the Internet protocols/architecture.">
+<meta property="og:image" content="http://localhost:8000/theme/images/apple-touch-icon-152x152.png" />
+<meta name="twitter:image" content="http://localhost:8000/theme/images/apple-touch-icon-152x152.png" >
+
+        <title>Back-to-Basics: The design philosophy of the DARPA Internet protocols  · Networked Systems
+</title>
+        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="http://networkedsystems.in/theme/css/style.min.css?42f61e83">
+        <link rel="shortcut icon" href="http://networkedsystems.in/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://networkedsystems.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://networkedsystems.in/theme/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://networkedsystems.in/theme/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://networkedsystems.in/theme/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://networkedsystems.in/theme/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://networkedsystems.in/theme/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://networkedsystems.in/theme/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://networkedsystems.in/theme/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://networkedsystems.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link href="http://networkedsystems.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Networked Systems - Full Atom Feed" />
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-50697333-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+    </head>
+    <body>
+        <div id="content-sans-footer">
+        <div class="navbar navbar-static-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://networkedsystems.in/"><span class=site-name><span style="color:#AA1032;">Networked Systems</span></span></a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav pull-right top-menu">
+                            <li ><a href="http://networkedsystems.in">Home</a></li>
+                            <li ><a href="http://networkedsystems.in/about">About</a></li>
+                            <li ><a href="http://networkedsystems.in/categories.html">Categories</a></li>
+                            <li ><a href="http://networkedsystems.in/tags.html">Tags</a></li>
+                            <li ><a href="http://networkedsystems.in/archives.html">Archives</a></li>
+                            <li><form class="navbar-search" action="http://networkedsystems.in/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span1"></div>
+                <div class="span10">
+<article>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+    <h2><a href="http://networkedsystems.in/b2b-darpa-design-policy-clark"> Back-to-Basics: The design philosophy of the <span class="caps">DARPA</span> Internet&nbsp;protocols  </a></h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+
+            
+            
+
+<p>I&#8217;ve always been intrigued by the technologies that have had their start as research projects funded by <a href="http://en.wikipedia.org/wiki/DARPA"><span class="caps">DARPA</span></a>. The Internet, in my opinion, is one project that has touched more lives than any other <span class="caps">DARPA</span> initiative. I first read this paper as part of my <a href="http://www.ecs.umass.edu/ece/wolf/courses/ECE671/">graduate course</a> in computer networking, and it feels good to start right from the paper that got me interested in the area of networked systems. This paper is by <a href="http://en.wikipedia.org/wiki/David_D._Clark">David Clark</a> and is one of the seminal papers in computer networking. It discussed about some of the core principles/motivations behind the design of the Internet protocols/architecture.
+</p>
+<p>The primary goal of the <span class="caps">DARPA</span> Internet initiative was to connect existing heterogeneous administratively separate networks together to form a larger network for the purposes of resource sharing, ease administration, etcetera. The underlying multiplexing mechanism for network resource sharing used was packet-switching since that was proven to be more robust and resilient to failures in <span class="caps">ARPANET</span>. Moreover, store-and-forward packet forwarding mechansim implemented in packet processors was chosen for similar&nbsp;reasons.</p>
+<p><img src="images/articles/clark-darpa-packet-switched-network.jpg" alt="clark" style="width: 12cm;"/></p>
+<p>The fundamental goal was further sub-divided into a prioritised list of requirements. In order of&nbsp;priority,</p>
+<ol>
+<li>Internet communication must continue despite loss of networks or&nbsp;gateways</li>
+<li>The Internet must support multiple types of communications&nbsp;service.</li>
+<li>The Internet architecture must accommodate a variety of&nbsp;networks.</li>
+<li>The Internet architecture must permit distributed management of its&nbsp;resources.</li>
+<li>The Internet architecture must be cost&nbsp;effective.</li>
+<li>The Internet architecture must permit host attachment with a low level of&nbsp;effort.</li>
+<li>The resources used in the internet architecture must be&nbsp;accountable.</li>
+</ol>
+<p>The military applications of the network meant that the items at the top of the list received more attention - one would want a communications network able to tolerate hostile enemy fire and able to sustain loss to parts of the network versus a network where resources accountability or cost effectiveness was of major&nbsp;importance. </p>
+<p>The seven items in the list can be categorized into three broad&nbsp;areas:</p>
+<ul>
+<li>Reliability&nbsp;(1)</li>
+<li>Flexibility (2, 3, 4,&nbsp;6)</li>
+<li>Cost Efficiency and Accountability (5,&nbsp;7)</li>
+</ul>
+<p>Reliability was achieved by a combination of packet-switched networking, and a design that resulted in a layered network protocol stack. In 1964, <a href="http://en.wikipedia.org/wiki/Paul_Baran">Paul Baran</a> had proved the reliability of packet-switched networking when subject to network failures in his published paper, &#8220;<a href="http://www.rand.org/content/dam/rand/pubs/research_memoranda/2006/RM3420.pdf">On Distributed Communications Networks</a>.&#8221; Layering of protocols meant that the lower layers stored as little information about the state of packet connections as possible, and instead, relegated that responsibility to upper layers which terminated in application on the end-hosts. This resulted in an architecture where the network was comprised of simple, stateless devices devoid of responsibility of ensuring reliable packet delivery, and instead pushed the responsibility of state management, retransmissions on failures etc. to upper-layer protocols and applications on the end-hosts. Clark called this <em>fate-sharing</em>. Moreover, this layered approach with the a datagram being the fundamental building block meant that the network could support multiple types of transport services with application specific&nbsp;requirements.</p>
+<p>The result is a global scalable decentralized network capable of connecting millions of systems and transporting data. Today, it is impossible to imagine communication, business, education and entertainment without the Internet, and is widely treated to be just another utility&nbsp;service.</p>
+<hr />
+<h4 id="references">References:<a class="headerlink" href="#references" title="Permanent link">&para;</a></h4>
+<p><strong>The Design Philosophy of the <span class="caps">DARPA</span> Internet Protocols</strong> D. Clark. In Symposium proceedings on Communications architectures and protocols (<span class="caps">SIGCOMM</span> &#8216;88), <span class="caps">ACM</span>, New York, <span class="caps">NY</span>, <span class="caps">USA</span>,&nbsp;1988.</p>
+<p><strong>On Distributed Communications Networks</strong> P. Baran, Communications Systems, <span class="caps">IEEE</span> Transactions on In Communications Systems, <span class="caps">IEEE</span> transactions on, Vol. 12, No. 1. pp. 1-9, March&nbsp;1964.</p>
+            <section>
+    <p id="post-share-links">
+    Like this post? Share on:
+    <a href="http://twitter.com/home?status=Back-to-Basics%3A%20The%20design%20philosophy%20of%20the%0A%3Cspan%20class%3D%22caps%22%3E%0A%20DARPA%0A%3C/span%3E%0AInternet%C2%A0protocols%20 http%3A//networkedsystems.in/b2b-darpa-design-policy-clark" target="_blank" title="Share on Twitter">Twitter</a>
+    ❄
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//networkedsystems.in/b2b-darpa-design-policy-clark&p[images][0]=&p[title]=Back-to-Basics%3A%20The%20design%20philosophy%20of%20the%0A%3Cspan%20class%3D%22caps%22%3E%0A%20DARPA%0A%3C/span%3E%0AInternet%C2%A0protocols%20&p[summary]=%3Cimg%20alt%3D%22clark%22%20src%3D%22images/articles/clark-darpa-packet-switched-network.jpg%22%20style%3D%22width%3A%2012cm%3B%22/%3E%0A%3Cp%3EI%E2%80%99ve%20always%20been%20intrigued%20by%20the%20technologies%20that%20have%20had%20their%20start%20as%20research%20projects%20funded%20by%20%3Ca%20href%3D%22http%3A//en.wikipedia.org/wiki/DARPA%22%3E%3Cspan%20class%3D%22caps%22%3EDARPA%3C/span%3E%3C/a%3E.%20The%20Internet%2C%20in%20my%20opinion%2C%20is%20one%20project%20that%20has%20touched%20more%20lives%20than%20any%20other%20%3Cspan%20class%3D%22caps%22%3EDARPA%3C/span%3E%20initiative.%20I%20first%20read%20this%20paper%20as%20part%20of%20my%20%3Ca%20href%3D%22http%3A//www.ecs.umass.edu/ece/wolf/courses/ECE671/%22%3Egraduate%20course%3C/a%3E%20in%20computer%20networking%2C%20and%20it%20feels%20good%20to%20start%20right%20from%20the%20paper%20that%20got%20me%20interested%20in%20the%20area%20of%20networked%20systems.%20This%20paper%20is%20by%20%3Ca%20href%3D%22http%3A//en.wikipedia.org/wiki/David_D._Clark%22%3EDavid%20Clark%3C/a%3E%20and%20is%20one%20of%20the%20seminal%20papers%20in%20computer%20networking.%20It%20discussed%20about%20some%20of%20the%20core%20principles/motivations%20behind%20the%20design%20of%20the%20Internet%20protocols/architecture.%0A%3C/p%3E" target="_blank" title="Share on Facebook">Facebook</a>
+    ❄
+    <a href="https://plus.google.com/share?url=http%3A//networkedsystems.in/b2b-darpa-design-policy-clark" target="_blank" title="Share on Google Plus">Google+</a>
+    ❄
+    <a href="mailto:?subject=Back-to-Basics%3A%20The%20design%20philosophy%20of%20the%0A%3Cspan%20class%3D%22caps%22%3E%0A%20DARPA%0A%3C/span%3E%0AInternet%C2%A0protocols%20&body=http%3A//networkedsystems.in/b2b-darpa-design-policy-clark" target="_blank" title="Share via Email">Email</a>
+    </p>
+</section>
+
+            <section>
+<p id="comment-message">So what do you think? Please leave your comments below. </p>
+<div class="accordion" id="accordion2">
+    <div class="accordion-group">
+        <div class="accordion-heading">
+            <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
+                href="http://networkedsystems.in/b2b-darpa-design-policy-clark#disqus_thread">
+                Comments
+            </a>
+        </div>
+        <div id="disqus_thread" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <div class="comments">
+                    <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'essessv';
+        var disqus_identifier = 'http://networkedsystems.in/b2b-darpa-design-policy-clark';
+    var disqus_url = 'http://networkedsystems.in/b2b-darpa-design-policy-clark';
+
+    (function() {
+         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+     })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+            <hr/>
+<section>
+    <h3>Keep Reading</h3>
+<ul class="related-posts-list">
+<li><a href="http://networkedsystems.in/ovs-uek-build-install" title="Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6">Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6</a></li>
+</ul>
+<hr />
+</section>
+            <aside>
+            <nav>
+            <ul class="articles-timeline">
+                <li class="previous-article">« <a href="http://networkedsystems.in/ovs-uek-build-install" title="Previous: Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6">Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6</a></li>
+            </ul>
+            </nav>
+            </aside>
+        </div>
+        <section>
+        <div class="span2" style="float:right;font-size:0.9em;">
+            <h4>Published</h4>
+            <time pubdate="pubdate" datetime="2014-06-01T00:00:00">Jun 1, 2014</time>
+            <h4>Category</h4>
+            <a class="category-link" href="http://networkedsystems.in/categories.html#back-to-basics-ref">back-to-basics</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="http://networkedsystems.in/tags.html#back-to-basics-ref">back-to-basics
+                    <span>1</span>
+</a></li>
+                <li><a href="http://networkedsystems.in/tags.html#networking-ref">networking
+                    <span>2</span>
+</a></li>
+            </ul>
+<h4>Connect with SS:</h4>
+    <a href="https://github.com/essessv" title="My GitHub Profile" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-github sidebar-social-links"></i></a>
+    <a href="mailto:essessv@gmail.com" title="My Email Address" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-envelope sidebar-social-links"></i></a>
+    <a href="http://networkedsystems.in/feeds/all.atom.xml" title="Subscribe in a reader" class="sidebar-social-links" target="_blank">
+    <i class="fa fa-rss sidebar-social-links"></i></a>
+<!-- Begin MailChimp Signup Form -->
+<div id="mc-embed-signup">
+<form action="http://networkedsystems.us8.list-manage2.com/subscribe/post?u=9f7e01cd5889917e5f0293691&amp;id=527a2ce74f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<h4>Get Monthly Updates</h4>
+<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email." required>
+<div class="clear"><input type="submit" value="Send me Free updates" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+</form>
+</div>
+<!--End mc_embed_signup-->
+        </div>
+        </section>
+</div>
+</article>
+                </div>
+                <div class="span1"></div>
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+<footer>
+<div id="footer">
+    <ul class="footer-content">
+        <li class="elegant-power">Powered by <a href="http://getpelican.com/" title="Pelican Home Page">Pelican</a>. Theme adapted from: <a href="http://oncrashreboot.com/pelican-elegant" title="Theme Elegant Home Page">Elegant</a></li>
+    </ul>
+</div>
+</footer>            <script src="http://code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+            <script type="text/javascript">
+var disqus_shortname = 'essessv';
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+<script  language="javascript" type="text/javascript">
+function uncollapse() {
+    if (window.location.hash.match(/^#comment-\d+$/)) {
+        $('#disqus_thread').collapse('show');
+    }
+}
+</script>
+<script type="text/javascript" language="JavaScript">
+uncollapse();
+window.onhashchange=function(){
+    if (window.location.hash.match(/^#comment-\d+$/))
+        window.location.reload(true);
+}
+</script>
+<script>
+$('#disqus_thread').on('shown', function () {
+    var link = document.getElementsByClassName('accordion-toggle');
+    var old_innerHTML = link[0].innerHTML;
+    $(link[0]).fadeOut(500, function() {
+        $(this).text('Click here to hide comments').fadeIn(500);
+    });
+    $('#disqus_thread').on('hidden', function () {
+        $(link[0]).fadeOut(500, function() {
+            $(this).text(old_innerHTML).fadeIn(500);
+        });
+    })
+})
+</script>
+
+
+<!-- Start of StatCounter Code for Default Guide -->
+<script type="text/javascript">
+var sc_project=9787011;
+var sc_invisible=1;
+var sc_security="7fd426c8";
+var scJsHost = (("https:" == document.location.protocol) ?
+"https://secure." : "http://www.");
+document.write("<sc"+"ript type='text/javascript' src='" +
+scJsHost+
+"statcounter.com/counter/counter.js'></"+"script>");
+</script>
+<noscript><div class="statcounter"><a title="web analytics"
+href="http://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="http://c.statcounter.com/9787011/0/7fd426c8/1/"
+alt="web analytics"></a></div></noscript>
+<!-- End of StatCounter Code for Default Guide -->
+    </body>
+    <!-- Theme: Elegant built for Pelican
+    License : http://oncrashreboot.com/pelican-elegant -->
+</html>
