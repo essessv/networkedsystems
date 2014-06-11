@@ -7,17 +7,17 @@
         <meta name="author" content="S.S." />
         <meta name="copyright" content="S.S." />
 
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
 
 <meta name="keywords" content="openvswitch, guide, networking, virtualization, lab, guide, " />
 
 <meta property="og:title" content="Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6 "/>
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://networkedsystems.in/ovs-uek-build-install" />
+<meta property="og:url" content="http://networkedsystems.in/posts/2014/ovs-uek-build-install/" />
 <meta property="og:description" content="Open vSwitch (OVS) has become the de facto software virtual switch in cloud computing deployments where multi-tenancy is a primary requirement. From the website, OVS is a production quality, multilayer virtual switch designed to enable massive network automation through programmatic extension, while still supporting standard management interfaces and protocols. The complete feature list can be found here. In this post, we will walk through the steps necessary to build OVS RPMs for Oracle’s Unbreakable Enterprise Kernel v6." />
 <meta property="og:site_name" content="Networked Systems" />
 <meta property="og:article:author" content="S.S." />
 <meta property="og:article:published_time" content="2014-05-11T00:00:00" />
-<meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6 ">
 <meta name="twitter:description" content="Open vSwitch (OVS) has become the de facto software virtual switch in cloud computing deployments where multi-tenancy is a primary requirement. From the website, OVS is a production quality, multilayer virtual switch designed to enable massive network automation through programmatic extension, while still supporting standard management interfaces and protocols. The complete feature list can be found here. In this post, we will walk through the steps necessary to build OVS RPMs for Oracle’s Unbreakable Enterprise Kernel v6.">
 <meta property="og:image" content="http://localhost:8000/theme/images/apple-touch-icon-152x152.png" />
@@ -28,33 +28,53 @@
         <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
         <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" href="http://networkedsystems.in/theme/css/style.min.css?9c3aadb3">
-        <link rel="shortcut icon" href="http://networkedsystems.in/theme/images/favicon.ico" type="image/x-icon" type="image/png" />
-        <link rel="icon" href="http://networkedsystems.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
-        <link rel="apple-touch-icon" href="http://networkedsystems.in/theme/images/apple-touch-icon.png"  type="image/png" />
-        <link rel="apple-touch-icon" sizes="57x57" href="http://networkedsystems.in/theme/images/apple-touch-icon-57x57.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="72x72" href="http://networkedsystems.in/theme/images/apple-touch-icon-72x72.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="76x76" href="http://networkedsystems.in/theme/images/apple-touch-icon-76x76.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="http://networkedsystems.in/theme/images/apple-touch-icon-114x114.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="120x120" href="http://networkedsystems.in/theme/images/apple-touch-icon-120x120.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="144x144" href="http://networkedsystems.in/theme/images/apple-touch-icon-144x144.png" type="image/png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="http://networkedsystems.in/theme/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="shortcut icon" href="http://networkedsystems.in/images/favicon.ico" type="image/x-icon" type="image/png" />
+        <link rel="icon" href="http://networkedsystems.in/images/apple-touch-icon-152x152.png" type="image/png" />
+        <link rel="apple-touch-icon" href="http://networkedsystems.in/images/apple-touch-icon.png"  type="image/png" />
+        <link rel="apple-touch-icon" sizes="57x57" href="http://networkedsystems.in/images/apple-touch-icon-57x57.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="http://networkedsystems.in/images/apple-touch-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="http://networkedsystems.in/images/apple-touch-icon-76x76.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="http://networkedsystems.in/images/apple-touch-icon-114x114.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="http://networkedsystems.in/images/apple-touch-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="144x144" href="http://networkedsystems.in/images/apple-touch-icon-144x144.png" type="image/png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="http://networkedsystems.in/images/apple-touch-icon-152x152.png" type="image/png" />
         <link href="http://networkedsystems.in/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Networked Systems - Full Atom Feed" />
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-50697333-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-    </head>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-50697333-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<!-- https://developers.google.com/custom-search/docs/structured_data?hl=es&csw=1#microformats -->
+<!--
+<PageMap>
+<DataObject type="document">
+    <Attribute name="title">Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux 6</Attribute>
+    <Attribute name="author">S.S.</Attribute>
+    <Attribute name="description">Open vSwitch (OVS) has become the de facto software virtual switch in cloud computing deployments where multi-tenancy is a primary requirement. From the website, OVS is a production quality, multilayer virtual switch designed to enable massive network automation through programmatic extension, while still supporting standard management interfaces and protocols. The complete feature list can be found here. In this post, we will walk through the steps necessary to build OVS RPMs for Oracle’s Unbreakable Enterprise Kernel v6.</Attribute>
+    <Attribute name="page_count">1</Attribute>
+    <Attribute name="rating">5</Attribute>
+    <Attribute name="last_update">2014-05-11T00:00:00</Attribute>
+</DataObject>
+<DataObject type="metatags">
+    <Attribute name="category" value="guide"/>
+        <Attribute name="category" value="openvswitch"/>
+        <Attribute name="category" value="guide"/>
+        <Attribute name="category" value="networking"/>
+        <Attribute name="category" value="virtualization"/>
+        <Attribute name="category" value="lab"/>
+</DataObject>
+
+
+-->    </head>
     <body>
         <div id="content-sans-footer">
         <div class="navbar navbar-static-top">
             <div class="navbar-inner">
-                <div class="container">
+                <div class="container-fluid">
+                    <div class="span1"></div>
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -82,7 +102,7 @@
 <article>
 <div class="row-fluid">
     <header class="page-header span10 offset2">
-    <h2><a href="http://networkedsystems.in/ovs-uek-build-install"> Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux&nbsp;6  </a></h1>
+    <h2><a href="http://networkedsystems.in/posts/2014/ovs-uek-build-install/"> Building Open vSwitch RPMs for Oracle Unbreakable Enterprise Linux&nbsp;6  </a></h1>
     </header>
 </div>
 
@@ -211,13 +231,13 @@ kmod-openvswitch-2.1.2-1.el6.x86_64.rpm  kmod-openvswitch-debug-2.1.2-1.el6.x86_
             <section>
     <p id="post-share-links">
     Like this post? Share on:
-    <a href="http://twitter.com/home?status=Building%20Open%20vSwitch%20RPMs%20for%20Oracle%20Unbreakable%20Enterprise%20Linux%C2%A06%20 http%3A//networkedsystems.in/ovs-uek-build-install" target="_blank" title="Share on Twitter">Twitter</a>
+    <a href="http://twitter.com/home?status=Building%20Open%20vSwitch%20RPMs%20for%20Oracle%20Unbreakable%20Enterprise%20Linux%C2%A06%20 http%3A//networkedsystems.in/posts/2014/ovs-uek-build-install/" target="_blank" title="Share on Twitter">Twitter</a>
     ❄
-    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//networkedsystems.in/ovs-uek-build-install&p[images][0]=&p[title]=Building%20Open%20vSwitch%20RPMs%20for%20Oracle%20Unbreakable%20Enterprise%20Linux%C2%A06%20&p[summary]=%0A%3Cp%3E%3Ca%20href%3D%22http%3A//openvswitch.org/%22%3EOpen%20vSwitch%3C/a%3E%20%28%3Cspan%20class%3D%22caps%22%3EOVS%3C/span%3E%29%20has%20become%20the%20de%20facto%20software%20virtual%20switch%20in%20cloud%20computing%20deployments%20where%20multi-tenancy%20is%20a%20primary%20requirement.%20From%20the%C2%A0website%2C%3C/p%3E%0A%3Cblockquote%3E%0A%3Cp%3E%3Cem%3E%3Cspan%20class%3D%22caps%22%3EOVS%3C/span%3E%20is%20a%20production%20quality%2C%20multilayer%20virtual%20switch%20designed%20to%20enable%20massive%20network%20automation%20through%20programmatic%20extension%2C%20while%20%0Astill%20supporting%20standard%20management%20interfaces%20and%C2%A0protocols.%3C/em%3E%3C/p%3E%0A%3C/blockquote%3E%0A%3Cp%3EThe%20complete%20feature%20list%20can%20be%20found%20%3Ca%20href%3D%22http%3A//openvswitch.org/features/%22%3Ehere%3C/a%3E.%20In%20this%20post%2C%20we%20will%20walk%20through%20the%20steps%20necessary%20to%20build%20%3Cspan%20class%3D%22caps%22%3EOVS%3C/span%3E%20RPMs%20for%20Oracle%E2%80%99s%20Unbreakable%20Enterprise%20Kernel%20v6.%20%3C/p%3E" target="_blank" title="Share on Facebook">Facebook</a>
+    <a href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]=http%3A//networkedsystems.in/posts/2014/ovs-uek-build-install/&p[images][0]=&p[title]=Building%20Open%20vSwitch%20RPMs%20for%20Oracle%20Unbreakable%20Enterprise%20Linux%C2%A06%20&p[summary]=%0A%3Cp%3E%3Ca%20href%3D%22http%3A//openvswitch.org/%22%3EOpen%20vSwitch%3C/a%3E%20%28%3Cspan%20class%3D%22caps%22%3EOVS%3C/span%3E%29%20has%20become%20the%20de%20facto%20software%20virtual%20switch%20in%20cloud%20computing%20deployments%20where%20multi-tenancy%20is%20a%20primary%20requirement.%20From%20the%C2%A0website%2C%3C/p%3E%0A%3Cblockquote%3E%0A%3Cp%3E%3Cem%3E%3Cspan%20class%3D%22caps%22%3EOVS%3C/span%3E%20is%20a%20production%20quality%2C%20multilayer%20virtual%20switch%20designed%20to%20enable%20massive%20network%20automation%20through%20programmatic%20extension%2C%20while%20%0Astill%20supporting%20standard%20management%20interfaces%20and%C2%A0protocols.%3C/em%3E%3C/p%3E%0A%3C/blockquote%3E%0A%3Cp%3EThe%20complete%20feature%20list%20can%20be%20found%20%3Ca%20href%3D%22http%3A//openvswitch.org/features/%22%3Ehere%3C/a%3E.%20In%20this%20post%2C%20we%20will%20walk%20through%20the%20steps%20necessary%20to%20build%20%3Cspan%20class%3D%22caps%22%3EOVS%3C/span%3E%20RPMs%20for%20Oracle%E2%80%99s%20Unbreakable%20Enterprise%20Kernel%20v6.%20%3C/p%3E" target="_blank" title="Share on Facebook">Facebook</a>
     ❄
-    <a href="https://plus.google.com/share?url=http%3A//networkedsystems.in/ovs-uek-build-install" target="_blank" title="Share on Google Plus">Google+</a>
+    <a href="https://plus.google.com/share?url=http%3A//networkedsystems.in/posts/2014/ovs-uek-build-install/" target="_blank" title="Share on Google Plus">Google+</a>
     ❄
-    <a href="mailto:?subject=Building%20Open%20vSwitch%20RPMs%20for%20Oracle%20Unbreakable%20Enterprise%20Linux%C2%A06%20&body=http%3A//networkedsystems.in/ovs-uek-build-install" target="_blank" title="Share via Email">Email</a>
+    <a href="mailto:?subject=Building%20Open%20vSwitch%20RPMs%20for%20Oracle%20Unbreakable%20Enterprise%20Linux%C2%A06%20&body=http%3A//networkedsystems.in/posts/2014/ovs-uek-build-install/" target="_blank" title="Share via Email">Email</a>
     </p>
 </section>
 
@@ -227,7 +247,7 @@ kmod-openvswitch-2.1.2-1.el6.x86_64.rpm  kmod-openvswitch-debug-2.1.2-1.el6.x86_
     <div class="accordion-group">
         <div class="accordion-heading">
             <a class="accordion-toggle disqus-comment-count" data-toggle="collapse" data-parent="#accordion2"
-                href="http://networkedsystems.in/ovs-uek-build-install#disqus_thread">
+                href="http://networkedsystems.in/posts/2014/ovs-uek-build-install/#disqus_thread">
                 Comments
             </a>
         </div>
@@ -237,8 +257,8 @@ kmod-openvswitch-2.1.2-1.el6.x86_64.rpm  kmod-openvswitch-debug-2.1.2-1.el6.x86_
                     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'essessv';
-        var disqus_identifier = 'http://networkedsystems.in/ovs-uek-build-install';
-    var disqus_url = 'http://networkedsystems.in/ovs-uek-build-install';
+        var disqus_identifier = 'http://networkedsystems.in/posts/2014/ovs-uek-build-install/';
+    var disqus_url = 'http://networkedsystems.in/posts/2014/ovs-uek-build-install/';
 
     (function() {
          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -260,15 +280,15 @@ kmod-openvswitch-2.1.2-1.el6.x86_64.rpm  kmod-openvswitch-debug-2.1.2-1.el6.x86_
 <section>
     <h3>Keep Reading</h3>
 <ul class="related-posts-list">
-<li><a href="http://networkedsystems.in/b2b-darpa-design-policy-clark" title="Back-to-Basics: The design philosophy of the DARPA Internet protocols">Back-to-Basics: The design philosophy of the DARPA Internet protocols</a></li>
-<li><a href="http://networkedsystems.in/b2b-end2end-arguments-reed" title="Back-to-Basics: End-to-End Arguments in System Design">Back-to-Basics: End-to-End Arguments in System Design</a></li>
+<li><a href="http://networkedsystems.in/posts/2014/b2b-darpa-design-policy-clark/" title="Back-to-Basics: The design philosophy of the DARPA Internet protocols">Back-to-Basics: The design philosophy of the DARPA Internet protocols</a></li>
+<li><a href="http://networkedsystems.in/posts/2014/b2b-end2end-arguments-reed/" title="Back-to-Basics: End-to-End Arguments in System Design">Back-to-Basics: End-to-End Arguments in System Design</a></li>
 </ul>
 <hr />
 </section>
             <aside>
             <nav>
             <ul class="articles-timeline">
-                <li class="next-article"><a href="http://networkedsystems.in/b2b-darpa-design-policy-clark" title="Next: Back-to-Basics: The design philosophy of the DARPA Internet protocols">Back-to-Basics: The design philosophy of the DARPA Internet protocols</a> »</li>
+                <li class="next-article"><a href="http://networkedsystems.in/posts/2014/b2b-darpa-design-policy-clark/" title="Next: Back-to-Basics: The design philosophy of the DARPA Internet protocols">Back-to-Basics: The design philosophy of the DARPA Internet protocols</a> »</li>
             </ul>
             </nav>
             </aside>
