@@ -66,9 +66,12 @@ TAG_SAVE_AS = ''
 AUTHOR_SAVE_AS = ''
 CATEGORY_SAVE_AS = ''
 USE_SHORTCUT_ICONS = True
-ARTICLE_URL = u'{slug}'
+#ARTICLE_URL = u'{slug}'
 PAGE_URL = u'{slug}'
 PAGE_SAVE_AS = u'{slug}.html'
+ARTICLE_URL = u'posts/{date:%Y}/{slug}/'
+ARTICLE_SAVE_AS = u'posts/{date:%Y}/{slug}/index.html'
+
 
 # Elegant Labels
 SOCIAL_PROFILE_LABEL = u'Connect with SS:'

@@ -12,7 +12,7 @@ I've always been intrigued by the technologies that have had their start as rese
 
 The primary goal of the DARPA Internet initiative was to connect existing heterogeneous administratively separate networks together to form a larger network for the purposes of resource sharing, ease administration, etcetera. The underlying multiplexing mechanism for network resource sharing used was packet-switching since that was proven to be more robust and resilient to failures in ARPANET. Moreover, store-and-forward packet forwarding mechansim implemented in packet processors was chosen for similar reasons.
 
-<img src="images/articles/clark-darpa-packet-switched-network.jpg" alt="clark" style="width: 12cm;"/>
+![](|filename|/images/articles/clark-darpa-packet-switched-network.jpg)
 
 The fundamental goal was further sub-divided into a prioritised list of requirements. In order of priority,
 
