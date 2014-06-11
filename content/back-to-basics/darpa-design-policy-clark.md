@@ -4,6 +4,7 @@ Category: back-to-basics
 Tags: networking, back-to-basics
 Slug: b2b-darpa-design-policy-clark
 Author: S.S.
+keywords: 
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 I've always been intrigued by the technologies that have had their start as research projects funded by [DARPA](http://en.wikipedia.org/wiki/DARPA). The Internet, in my opinion, is one project that has touched more lives than any other DARPA initiative. I first read this paper as part of my [graduate course](http://www.ecs.umass.edu/ece/wolf/courses/ECE671/) in computer networking, and it feels good to start right from the paper that got me interested in the area of networked systems. This paper is by [David Clark](http://en.wikipedia.org/wiki/David_D._Clark) and is one of the seminal papers in computer networking. It discussed about some of the core principles/motivations behind the design of the Internet protocols/architecture.

@@ -4,6 +4,7 @@ Category: guide
 Tags: openvswitch, guide, networking, virtualization, lab
 Slug: ovs-uek-build-install
 Author: S.S.
+keywords: openvswitch, build, rpm, unbreakable enterprise linux, oracle
 
 <!-- PELICAN_BEGIN_SUMMARY -->
 
