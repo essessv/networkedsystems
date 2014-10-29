@@ -4,49 +4,49 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://networkedsystems.in/index.html</loc>
-<lastmod>2014-10-28T21:45:16-00:00</lastmod>
+<loc>http://networkedsystems.net/index.html</loc>
+<lastmod>2014-10-28T22:32:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://networkedsystems.in/archives.html</loc>
-<lastmod>2014-10-28T21:45:16-00:00</lastmod>
+<loc>http://networkedsystems.net/archives.html</loc>
+<lastmod>2014-10-28T22:32:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://networkedsystems.in/tags.html</loc>
-<lastmod>2014-10-28T21:45:16-00:00</lastmod>
+<loc>http://networkedsystems.net/tags.html</loc>
+<lastmod>2014-10-28T22:32:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://networkedsystems.in/categories.html</loc>
-<lastmod>2014-10-28T21:45:16-00:00</lastmod>
+<loc>http://networkedsystems.net/categories.html</loc>
+<lastmod>2014-10-28T22:32:04-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://networkedsystems.in/posts/2014/b2b-end2end-arguments-reed/</loc>
+<loc>http://networkedsystems.net/posts/2014/b2b-end2end-arguments-reed/</loc>
 <lastmod>2014-06-05T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://networkedsystems.in/posts/2014/b2b-darpa-design-policy-clark/</loc>
+<loc>http://networkedsystems.net/posts/2014/b2b-darpa-design-policy-clark/</loc>
 <lastmod>2014-06-01T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://networkedsystems.in/posts/2014/ovs-uek-build-install/</loc>
+<loc>http://networkedsystems.net/posts/2014/ovs-uek-build-install/</loc>
 <lastmod>2014-05-11T00:00:00-00:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
