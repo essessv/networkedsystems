@@ -5,29 +5,43 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>http://networkedsystems.net/index.html</loc>
-<lastmod>2014-10-28T22:32:04-00:00</lastmod>
+<lastmod>2014-11-03T18:13:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://networkedsystems.net/archives.html</loc>
-<lastmod>2014-10-28T22:32:04-00:00</lastmod>
+<lastmod>2014-11-03T18:13:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://networkedsystems.net/tags.html</loc>
-<lastmod>2014-10-28T22:32:04-00:00</lastmod>
+<lastmod>2014-11-03T18:13:55-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>http://networkedsystems.net/categories.html</loc>
-<lastmod>2014-10-28T22:32:04-00:00</lastmod>
+<lastmod>2014-11-03T18:13:55-00:00</lastmod>
 <changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://networkedsystems.net/about</loc>
+<lastmod>2014-05-01T13:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>http://networkedsystems.net/reading-list</loc>
+<lastmod>2014-06-01T00:00:00-00:00</lastmod>
+<changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
