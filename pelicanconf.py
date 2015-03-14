@@ -73,7 +73,7 @@ ARTICLE_SAVE_AS = u'posts/{date:%Y}/{slug}/index.html'
 
 
 # Elegant Labels
-SOCIAL_PROFILE_LABEL = u'Connect with SS:'
+SOCIAL_PROFILE_LABEL = u'Connect with Shashank:'
 RELATED_POSTS_LABEL = 'Keep Reading'
 SHARE_POST_INTRO = 'Like this post? Share on:'
 COMMENTS_INTRO = u'So what do you think? Please leave your comments below.'
@@ -92,7 +92,7 @@ LINKS =  (('All Things Distributed', 'http://www.allthingsdistributed.com'),
 
 # Social widget
 SOCIAL = (('GitHub', 'https://github.com/essessv'),
-          ('Email', 'mailto:essessv@gmail.com'),
+          ('Email', 'mailto:shashank@networkedsystems.net'),
           ('RSS', 'http://networkedsystems.net/feeds/all.atom.xml'),)
 
 # Mailchimp
