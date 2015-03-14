@@ -101,4 +101,5 @@ EMAIL_FIELD_PLACEHOLDER = u'Enter your email.'
 SUBSCRIBE_BUTTON_TITLE = u'Send me Free updates'
 MAILCHIMP_FORM_ACTION = u'empty'
 
-
+# Google APPS
+GOOGLE_APPS_VERIFICATION = u'empty'
