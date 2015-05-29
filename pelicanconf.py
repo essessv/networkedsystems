@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 # Site Basic Settings
-AUTHOR = u'SS'
+AUTHOR = u'Shashank'
 SITEURL = 'http://localhost:8000'
 SITENAME = u"""<span style="color:#AA1032;">Networked Systems</span>"""
 FEATURED_IMAGE = SITEURL + '/images/apple-touch-icon-152x152.png'
@@ -92,8 +92,8 @@ LINKS =  (('All Things Distributed', 'http://www.allthingsdistributed.com'),
 
 # Social widget
 SOCIAL = (('GitHub', 'https://github.com/essessv'),
-          ('Email', 'mailto:shashank@networkedsystems.net'),
-          ('RSS', 'http://networkedsystems.net/feeds/all.atom.xml'),)
+          ('Email', 'mailto:shashank@shashtag.net'),
+          ('RSS', 'http://shashtag.net/feeds/all.atom.xml'),)
 
 # Mailchimp
 EMAIL_SUBSCRIPTION_LABEL = u'Get Monthly Updates'
