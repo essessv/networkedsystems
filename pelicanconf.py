@@ -5,8 +5,8 @@ from __future__ import unicode_literals
 # Site Basic Settings
 AUTHOR = u'Shashank'
 SITEURL = 'http://localhost:8000'
-SITENAME = u"""<span style="color:#AA1032;"></span>"""
-FEATURED_IMAGE = SITEURL + '/images/shashtag.png'
+SITENAME = u"""<span style="color:#AA1032;font-size:45pt;font-family: Cooper Black">S#</span>"""
+#FEATURED_IMAGE = SITEURL + '/images/apple-touch-icon-152x152.png'
 DATE_FORMATS = {'en': '%a, %d %b %Y'}
 LOCALE = ('en_US')
 DEFAULT_LANG = u'en'
